@@ -1,0 +1,17 @@
+
+.Layout footer {
+    text-align: center;
+}
+
+.Layout .main-link {
+    font-weight: 600;
+    font-size: 1.5;
+}
+
+.Layout .grow {
+    width: 90%;
+}
+
+.Layout .links {
+    display: flex;
+}
