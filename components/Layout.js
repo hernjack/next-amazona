@@ -44,12 +44,11 @@ const Layout = (props) => {
           <NextLink href="/" passHref>
             <Link className={classes['main-link']} >
               <Image
-                // loader={myLoader}
                 className="th-logo"
                 src="/images/th-logo.svg"
                 alt="th logo"
-                width={450}
-                height={75}
+                width={250}
+                height={50}
               />
             </Link>
           </NextLink>
