@@ -24,8 +24,8 @@ import { useRouter } from 'next/router';
 import CheckoutWizard from '../components/CheckoutWizard';
 import { useSnackbar } from 'notistack';
 import { getError } from '../utils/error';
-import Cookies from 'js-cookie';
 import axios from 'axios';
+// import Cookies from 'js-cookie';
 
 function PlaceOrder() {
   const router = useRouter();
@@ -60,7 +60,7 @@ function PlaceOrder() {
       const { data } = await axios.post(
         '/api/orders',
         {
-          orderOItems: cartItems,
+          orderItems: cartItems,
           shippingAddress,
           paymentMethod,
           itemsPrice,
@@ -85,7 +85,7 @@ function PlaceOrder() {
   };
 
   return (
-    <Layout title="Shopping Cart">
+    <Layout title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <Typography component="h2" variant="h2">
         Place Order

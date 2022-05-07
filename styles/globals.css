@@ -41,5 +41,9 @@ form {
   background-color: 'transparent';
 }
 
+.error {
+  color: #f04040;
+}
+
 
 

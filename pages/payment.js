@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../utils/Store';
@@ -15,6 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useSnackbar } from 'notistack';
+// import Cookies from 'js-cookie';
 
 export default function Payment() {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();

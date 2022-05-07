@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import Cookies from 'js-cookie';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import {
@@ -9,6 +8,7 @@ import useStyles from '../utils/styles';
 import classes from '../styles/Layout.module.css';
 import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
+// import Cookies from 'js-cookie';
 
 const Layout = (props) => {
   const router = useRouter();
