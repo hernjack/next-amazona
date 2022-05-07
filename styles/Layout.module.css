@@ -1,17 +1,21 @@
-
 .Layout footer {
-    text-align: center;
+  text-align: center;
 }
 
 .Layout .main-link {
-    font-weight: 600;
-    font-size: 1.5;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .Layout .grow {
-    width: 90%;
+  width: 65%;
 }
 
 .Layout .links {
-    display: flex;
+  display: flex;
+}
+
+.Layout .navbarButton {
+  color: #ffffff;
+  text-transform: initial;
 }

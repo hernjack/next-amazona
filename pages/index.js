@@ -10,7 +10,9 @@ const Home = (props) => {
 
   return (
     <Layout>
-      <h1>Products</h1>
+      <Typography component="h2" variant="h2">
+        Products
+      </Typography>
       <Grid container spacing={3}>
         {products.map((product) => (
           <Grid item md={4} key={product.name}>

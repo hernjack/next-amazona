@@ -12,7 +12,6 @@ import {
   Button,
 } from '@mui/material';
 import Layout from '../../components/Layout';
-import classes from '../../styles/[slug].module.css';
 import Product from '../../models/Product';
 import db from '../../utils/db';
 import axios from 'axios';
@@ -40,7 +39,7 @@ const ProductScreen = (props) => {
 
   return (
     <Layout title={product.name} description={product.description}>
-      <div className={classes.section}>
+      <div className="section">
         <NextLink href="/" passHref>
           <Link>
             <Typography>back to products</Typography>

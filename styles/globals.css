@@ -17,5 +17,29 @@ a {
 
 form {
   max-width: 800;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
+
+.grow {
+  flex-grow: 1;
+}
+
+.main {
+  min-height: '80vh'
+}
+
+.section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wizard {
+  margin: 1rem;
+}
+
+.transparent-background {
+  background-color: 'transparent';
+}
+
+
+
