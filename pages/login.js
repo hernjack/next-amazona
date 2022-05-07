@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, } from 'react';
+import React, { useContext, useEffect, } from 'react';
 import {
   List,
   ListItem,
@@ -31,9 +31,6 @@ const Login = () => {
       router.push('/');
     }
   }, []);
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const submitHandler = async ({ email, password }) => {
     closeSnackbar();

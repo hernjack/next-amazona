@@ -9,8 +9,7 @@ import {
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
-import useStyles from '../utils/styles';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { Controller, useForm } from 'react-hook-form';
 import CheckoutWizard from '../components/CheckoutWizard';
 

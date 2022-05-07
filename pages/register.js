@@ -12,7 +12,6 @@ import NextLink from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
-import useStyles from '../utils/styles';
 import { Controller, useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 // import Cookies from 'js-cookie';
@@ -34,12 +33,8 @@ const Register = () =>{
     }
   }, []);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
-
 
   const submitHandler = async ({ name, email, password, confirmPassword }) => {
     closeSnackbar();
