@@ -9,6 +9,7 @@ import classes from '../styles/Layout.module.css';
 import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
 // import Cookies from 'js-cookie';
+import Image from 'next/image'
 
 const Layout = (props) => {
   const router = useRouter();
@@ -40,13 +41,30 @@ const Layout = (props) => {
       </Head>
       <AppBar position='static' sx={useStyles.navbar}>
         <Toolbar>
-          <NextLink  href="/" passHref>
+          <NextLink href="/" passHref>
             <Link className={classes['main-link']} >
-              <Typography>Tommy Hilfiger</Typography>
+              <Image
+                // loader={myLoader}
+                className="th-logo"
+                src="/images/th-logo.svg"
+                alt="th logo"
+                width={450}
+                height={75}
+              />
             </Link>
           </NextLink>
           <div className={classes.grow}></div>
           <div className={classes.links}>
+            <NextLink href="/about-us" passHref>
+              <Link>
+                About Us
+              </Link>
+            </NextLink>
+            <NextLink href="/contact-us" passHref>
+              <Link>
+                Contact Us
+              </Link>
+            </NextLink>
             <NextLink href="/cart" passHref>
               <Link>
                 {cart.cartItems.length > 0 ? (
