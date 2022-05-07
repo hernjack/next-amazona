@@ -9,14 +9,14 @@ import {
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
 import { Controller, useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 // import Cookies from 'js-cookie';
 
-const Register = () =>{
+const Register = () => {
   const {
     handleSubmit,
     control,
@@ -32,9 +32,6 @@ const Register = () =>{
       router.push('/');
     }
   }, []);
-
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   const submitHandler = async ({ name, email, password, confirmPassword }) => {
     closeSnackbar();
@@ -66,7 +63,7 @@ const Register = () =>{
         </Typography>
         <List>
           <ListItem>
-          <Controller
+            <Controller
               name="name"
               control={control}
               defaultValue=""
@@ -95,7 +92,7 @@ const Register = () =>{
             ></Controller>
           </ListItem>
           <ListItem>
-          <Controller
+            <Controller
               name="email"
               control={control}
               defaultValue=""
@@ -124,24 +121,62 @@ const Register = () =>{
             ></Controller>
           </ListItem>
           <ListItem>
-            <TextField
-              variant="outlined"
-              fullWidth
-              id="password"
-              label="Password"
-              inputProps={{ type: 'password' }}
-              onChange={(e) => setPassword(e.target.value)}
-            ></TextField>
+            <Controller
+              name="password"
+              control={control}
+              defaultValue=""
+              rules={{
+                required: true,
+                minLength: 6,
+              }}
+              render={({ field }) => (
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                  id="password"
+                  label="Password"
+                  inputProps={{ type: 'password' }}
+                  error={Boolean(errors.password)}
+                  helperText={
+                    errors.password
+                      ? errors.password.type === 'minLength'
+                        ? 'Password length is more than 5'
+                        : 'Password is required'
+                      : ''
+                  }
+                  {...field}
+                ></TextField>
+              )}
+            ></Controller>
           </ListItem>
           <ListItem>
-            <TextField
-              variant="outlined"
-              fullWidth
-              id="confirmPassword"
-              label="Confirm Password"
-              inputProps={{ type: 'password' }}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            ></TextField>
+            <Controller
+              name="confirmPassword"
+              control={control}
+              defaultValue=""
+              rules={{
+                required: true,
+                minLength: 6,
+              }}
+              render={({ field }) => (
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                  id="confirmPassword"
+                  label="Confirm Password"
+                  inputProps={{ type: 'password' }}
+                  error={Boolean(errors.confirmPassword)}
+                  helperText={
+                    errors.confirmPassword
+                      ? errors.confirmPassword.type === 'minLength'
+                        ? 'Confirm Password length is more than 5'
+                        : 'Confirm  Password is required'
+                      : ''
+                  }
+                  {...field}
+                ></TextField>
+              )}
+            ></Controller>
           </ListItem>
           <ListItem>
             <Button variant="contained" type="submit" fullWidth color="primary">
